@@ -12,7 +12,7 @@ import flask
 from flask import Flask, request, jsonify
 import numpy as np
 
-from text_recognizer.character_predictor import LinePredictor
+from text_recognizer.line_predictor import LinePredictor
 import text_recognizer.util as util
 
 app = Flask(__name__)

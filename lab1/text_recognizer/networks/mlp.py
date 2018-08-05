@@ -18,7 +18,22 @@ def mlp(input_shape: Tuple[int, ...],
     model = Sequential()
     # Don't forget to pass input_shape to the first layer of the model
     ##### Your code below (Lab 1)
+    
+    print(input_shape)
+    
+    model.add(Flatten(input_shape=input_shape))
+    for _ in range(num_layers):
+        model.add(Dense(layer_size, activation='relu'))
+        model.add(Dropout(dropout_amount))
+    model.add(Dense(output_shape[0], activation='softmax'))
 
+    """
+    model.compile(
+        optimizer='rmsprop', 
+        loss='categorical_crossentropy',
+    )
+    """
+    
     ##### Your code above (Lab 1)
 
     return model
